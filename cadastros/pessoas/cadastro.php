@@ -1,4 +1,6 @@
 <?php
+    include "conn/conexao.php";
+
     if (isset($_POST['gravar'])) {
         try {
             $stmt = $conn->prepare(

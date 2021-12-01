@@ -26,22 +26,25 @@
             <td>Ação</td>
 </tr>
 <?php
-        if ( count($result) ) {
-            foreach($result as $row) {
-                ?>
-                <tr>
-                    <td><?=$row['id']?></td>
-                    <td><?=$row['nome']?></td>
-                    <td>
-                        <a href="?modulo=estados&pagina=alterar&id=<?=$row['id']?>">Alterar</a>
-                        <a href="?modulo=estados&pagina=deletar&id=<?=$row['id']?>">Excluír</a>
-                    </td>
-                </tr>
-                <?php
-            }
-        } else {
-            echo "Nenhum resultado retornado.";
+    $linhas = 5;
+    
+    if ( count($result) ) {
+        foreach($result as $row) {
+            
+            ?>
+            <tr>
+                <td><?=$row['id']?></td>
+                <td><?=$row['nome']?></td>
+                <td>
+                    <a href="?modulo=estados&pagina=alterar&id=<?=$row['id']?>">Alterar</a>
+                    <a href="?modulo=estados&pagina=deletar&id=<?=$row['id']?>">Excluír</a>
+                </td>
+            </tr>
+            <?php
         }
+    } else {
+        echo "Nenhum resultado retornado.";
+    }
 ?>
 </table>
 <?php
